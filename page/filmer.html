@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BIOBIO - Filmer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Sulphur+Point&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="..\style\filmer.css">
+</head>
+<body>
+
+
+
+
+
+
+
+    
+<!-- Navigation -->
+<nav>
+    <div class="nav-wrapper">
+        <div class="nav-menu-box">
+            <div class="nav-submenu-box">
+                <img src="..\logo\biobiologo.png" alt="Bild">
+                <label for="toggle">&#9776</label>
+                <input class="checkbox-box" type="checkbox" id="toggle"/>
+                <div class="nav-menu-list">
+                  <a href="..\page\hem.html">Hem</a>
+                  <a href="..\page\filmer.html">Filmer</a>
+                  <a href="..\page\biljetter.html">Biljetter</a>
+                  <a href="..\page\erbjudande.html">Erbjudande</a>
+                  <a href="..\page\nyheter.html">Nyheter</a>
+                  <a href="..\page\omoss.html">Om Oss</a>
+                  <a href="#">Logga In</a>
+                    <input type="text" placeholder="Sök..">
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Snöfall effekt -->
+        <script type="text/javascript">
+                Width =2000; // ange bredden på sidan som ska snöas in...
+                Height =2000; // ange höjden på sidan som ska snöas in...
+                Count =70; // antal snöflingor OBS! ange inte för stort antal!
+                MaxStep=3; // max steg i rörelsen
+                MinStep=1; // min steg i rörelsen
+                MaxFlake=10; // max storlek på snöflinga
+                MinFlake=4; // min storlek på snöflinga
+        
+                PosX = new Array();
+                PosY = new Array();
+                StepX = new Array();
+                StepY = new Array();
+                StarSize=new Array();
+        
+                    for (i = 0; i < Count; i++) {
+                    PosX[i] = Math.random()*Width;
+                    PosY[i] = Math.random()*Height;
+                    StepX[i] =MinStep+Math.random()* -MaxStep;
+                    StepY[i] =MinStep+Math.random()* MaxStep;
+                    StarSize[i]=MinFlake+Math.random() * MaxFlake;
+        
+                document.write("<div id='Obj" + i + "' style='position:absolute; left:0px; top:-20px; z-index:10000; visibility:hidden; color:#fff; font-weight:normal; font-family:Verdana; font-size:"+StarSize[i]+"pt'>•</div>");
+                }
+        
+                function animate() {
+                for (i = 0; i < Count; i++) {
+                PosY[i] += StepY[i];
+                PosX[i] += StepX[i];
+        
+                document.getElementById("Obj"+i).style.visibility = "visible";
+                if (PosY[i] > Width || PosX[i] > Height || PosX[i]<0) { // starta om från toppen av sidan när mitten nås
+                PosX[i] = Math.random()*Width; ///2
+                PosY[i] = -20;
+                StepX[i] = MinStep+Math.random()* -MaxStep;
+                StepY[i] = MinStep+Math.random()* MaxStep;
+                }
+        
+                document.getElementById("Obj"+i).style.top = PosY[i] + "px";
+                document.getElementById("Obj"+i).style.left = PosX[i] + "px";
+                }
+                setTimeout("animate()", 30);// hastighet
+                }
+        
+                setTimeout("animate()", 1000);
+        </script>
+        
+</nav>
+
+
+
+
+
+
+<!-- Main -->
+    <main>
+        <div class="main-wrapper">
+            <div class="main-upper-boxwrap">
+                <div class="main-titel-box">
+                    Filmer
+                </div>       
+            </div>
+            <div class="main-under-boxwrap">
+                <div class="main-filter-wrapper">
+                    <div class="main-dropdown-box">
+                        <div class="main-title-list">
+                            Välj titel:
+                        </div>    
+                        <div>
+                            <select>
+                                <option value="0">Alla</option>
+                                <option value="1">Action</option>
+                                <option value="2">Animerat</option>
+                                <option value="3">Barn</option>
+                                <option value="4">Drama</option>
+                                <option value="5">Familj</option>
+                                <option value="6">Komedi</option>
+                                <option value="7">Krig</option>
+                                <option value="8">Musik</option>
+                                <option value="9">Romantik</option>
+                                <option value="10">Sci-fi</option>
+                                <option value="11">Skräck</option>
+                                <option value="12">Äventyr</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="main-dropdown-box">
+                        <div class="main-title-list">
+                            Välj genre:
+                        </div>    
+                        <div>
+                            <select>
+                                    <option value="0">Alla</option>
+                                    <option value="1">Action</option>
+                                    <option value="2">Animerat</option>
+                                    <option value="3">Barn</option>
+                                    <option value="4">Drama</option>
+                                    <option value="5">Familj</option>
+                                    <option value="6">Komedi</option>
+                                    <option value="7">Krig</option>
+                                    <option value="8">Musik</option>
+                                    <option value="9">Romantik</option>
+                                    <option value="10">Sci-fi</option>
+                                    <option value="11">Skräck</option>
+                                    <option value="12">Äventyr</option>
+                            </select>
+                        </div>    
+                    </div>
+                    <div class="main-dropdown-box">
+                        <div class="main-title-list">
+                            Betyg:
+                        </div>    
+                        <div>
+                            <select>
+                                <option value="0">Alla</option>
+                                <option value="1">6+</option>
+                                <option value="2">7+</option>
+                                <option value="3">8+</option>
+                                <option value="3">9+</option>
+                            </select>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+<!-- Section -->
+
+<section>
+                <div class="filmer-row">
+                  <div class="filmer-card">
+                    <img
+                    class="img-filmer"
+                      src="..\img/aladdin.jpg"
+                      alt="aladdin"
+                      
+                    />
+                  </div>
+                  <div class="filmer-card">
+                    <img
+                    class="img-filmer"
+                      src="..\img/alien.jpg"
+                      alt="alien"
+                    />
+                  </div>
+                  <div class="filmer-card">
+                    <img
+                    class="img-filmer"
+                      src="..\img/arne.jpg"
+                      alt="arne"
+                      
+                    />
+                  </div>
+                  <div class="filmer-card">
+                    <img
+                    class="img-filmer"
+                      src="..\img/christmasprince.jpg"
+                      alt="christmasprince"
+                    />
+                  </div>
+                </div>
+              </div>
+              
+            
+</section>
+
+<section>
+        <div class="filmer-row">
+          <div class="filmer-card">
+            <img
+            class="img-filmer"
+              src="..\img/downtownabbey.jpg"
+              alt="downtownabbey"
+            />
+          </div>
+          <div class="filmer-card">
+            <img
+            class="img-filmer"
+              src="..\img/fastand.jpg"
+              alt="fastand"
+            />
+          </div>
+          <div class="filmer-card">
+            <img
+            class="img-filmer"
+              src="..\img/grinch.jpg"
+              alt="grinch"
+            />
+          </div>
+          <div class="filmer-card">
+            <img
+            class="img-filmer"
+              src="..\img/hustlers.jpg"
+              alt="hustlers"
+            />
+          </div>
+        </div>
+      </div>
+      
+    
+</section>
+<section>
+        <div class="filmer-row">
+          <div class="filmer-card">
+            <img
+            class="img-filmer"
+              src="..\img/igudsnamn.jpg"
+              alt="igudsnamn"
+            />
+          </div>
+          <div class="filmer-card">
+            <img
+            class="img-filmer"
+              src="..\img/joker.jpg"
+              alt="joker"
+            />
+          </div>
+          <div class="filmer-card">
+            <img
+            class="img-filmer"
+              src="..\img/moonlight.jpg"
+              alt="moonlight"
+            />
+          </div>
+          <div class="filmer-card">
+            <img
+            class="img-filmer"
+              src="..\img/OceansEight.jpeg"
+              alt="OceansEight"
+            />
+          </div>
+        </div>
+      </div>
+      
+    
+</section>
+<section>
+        <div class="filmer-row">
+          <div class="filmer-card">
+            <img
+            class="img-filmer"
+              src="..\img/conjuring.jpg"
+              alt="achristmasprince"
+            />
+          </div>
+          <div class="filmer-card">
+            <img
+            class="img-filmer"
+              src="..\img/robinhood.jpg"
+              alt="alien"
+            />
+          </div>
+          <div class="filmer-card">
+            <img
+            class="img-filmer"
+              src="..\img/spiderman.jpg"
+              alt="arne"
+            />
+          </div>
+          <div class="filmer-card">
+            <img
+            class="img-filmer"
+              src="../img/downtownabbey.jpg"
+              alt="downtownabbey"
+            />
+          </div>
+        </div>
+      </div>
+      
+    
+</section>
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer>
+    <div class="footer-wrapper">
+        <div class="footer-left-boxwrap">
+            <div class="footer-link-boxes">
+                <div class="footer-link-box">
+                    <a href="..\page\filmer.html">Filmer</a>
+                </div>
+                <div class="footer-link-box">
+                    <a href="..\page\biljetter.html">Biljetter</a>
+                </div>
+                <div class="footer-link-box">
+                    <a href="..\page\nyheter.html">Nyheter</a>
+                </div>
+            </div>    
+            <div class="footer-link-boxes">
+                <div class="footer-link-box">
+                    <a href="..\page\erbjudande.html">Erbjudande</a>
+                </div>
+                <div class="footer-link-box">
+                    <a href="..\page\omoss.html">Om Oss</a>
+                </div>
+                <div class="footer-link-box">
+                    <a href="#">Logga In</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-mid-boxwrap">
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-youtube-play"></i></a>
+            <a href="#"><i class="fa fa-facebook-f"></i></a>
+        </div>
+        <div class="footer-mid-boxwrap">
+          <!-- Nyhetsbrev -->
+            <form class="news-form" action="/action_page.php">
+             <div class="content-form">
+                  <b>Nyhetsbrev</b> <input class="nyhetsruta" type="text" name="email" placeholder="Email">
+                  <input class="reg_button" type="reset" value="Registrera"> 
+                </div>
+              </form>
+          </div>
+    </div>
+</footer>
+<div class="footer-copyright-box">TEAM <strong>Tesla</strong> &#169;
+    <video width="0" height="0" autoplay="yes" name="media"><source src="https://webzoom.freewebs.com/fmei75/M%20christmas/LetItSnow.wa" type="audio/x-wav"></video>
+</div>        
+
+
+
+
+
+    
+</body>
+</html>
